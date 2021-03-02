@@ -19,7 +19,7 @@ const { Meta } = Card;
 const { TabPane } = Tabs;
 
 const SingleProduct = ({ product, onStarClick, star }) => {
-  const { title, images, description, _id } = product;
+  const { title, images, description, _id ,slug} = product;
   const [tooltip,setTooltip] = useState("Click to add")
   const dispatch = useDispatch()
   const {user,cart} = useSelector((state)=>({...state}))
@@ -67,13 +67,23 @@ const SingleProduct = ({ product, onStarClick, star }) => {
 
   const handleAddToWishList =(e) => {
    e.preventDefault();
+   if(user && user.token){
+    addToWishList(product._id,user.token)
+    .then((res) => {
+      console.log('added to wishlist',res.data)
+      toast.success("Added to Wishlist")
+      history.push("/user/wishlist")
+    })
+    
+}else{
+    history.push({
+        pathname:"/login",
+        state:{ from:`/product/${slug}`}
 
-   addToWishList(product._id,user.token)
-   .then((res) => {
-     console.log('added to wishlist',res.data)
-     toast.success("Added to Wishlist")
-     history.push("/user/wishlist")
-   })
+    })
+}
+
+  
 
   }
 
