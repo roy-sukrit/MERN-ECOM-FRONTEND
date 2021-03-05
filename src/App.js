@@ -36,7 +36,10 @@ import { Spin, Space } from 'antd';
 // import SubHome from './pages/sub/SubHome'
 // import Checkout from './pages/Checkout'
 // import Shop from './pages/Shop'
-
+import Chatbot from "react-chatbot-kit";
+import ActionProvider from "./components/chatbot/ActionProvider";
+import MessageParser from "./components/chatbot/MessageParser";
+import config from "./components/chatbot/config";
 //using lazy
 const Login = lazy(()=> import( "./pages/auth/Login"));
 const Register = lazy(()=> import( "./pages/auth/Register"));
@@ -118,8 +121,18 @@ const App = () => {
           </Space>
       </div>
       </div>}>
-    <Header/>
+      <Header/>
+
+      <div className="col  d-flex justify-content-around p-5 ">
+    <Chatbot
+    config={config}
+    actionProvider={ActionProvider}
+    messageParser={MessageParser}
+      />
+  </div>
+  
     <SideDrawer />
+  
     <ToastContainer />
 
     <Switch>
