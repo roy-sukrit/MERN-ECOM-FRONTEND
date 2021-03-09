@@ -36,10 +36,14 @@ import { Spin, Space } from 'antd';
 // import SubHome from './pages/sub/SubHome'
 // import Checkout from './pages/Checkout'
 // import Shop from './pages/Shop'
+<<<<<<< HEAD
 // import Chatbot from "react-chatbot-kit";
 // import ActionProvider from "./components/chatbot/ActionProvider";
 // import MessageParser from "./components/chatbot/MessageParser";
 // import config from "./components/chatbot/config";
+=======
+
+>>>>>>> be2a0e2a4fe624d9f272b20f04236a857467cacb
 //using lazy
 const Login = lazy(()=> import( "./pages/auth/Login"));
 const Register = lazy(()=> import( "./pages/auth/Register"));
@@ -124,7 +128,11 @@ const App = () => {
       <Header/>
 
       <div className="col  d-flex justify-content-around p-5 ">
+<<<<<<< HEAD
  
+=======
+  
+>>>>>>> be2a0e2a4fe624d9f272b20f04236a857467cacb
   </div>
   
     <SideDrawer />
