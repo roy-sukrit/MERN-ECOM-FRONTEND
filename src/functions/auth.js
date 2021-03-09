@@ -6,7 +6,8 @@ export const createOrUpdateUser = async (authtoken) => {
     `${process.env.REACT_APP_API}/create-or-update-user`,
     {},
     {
-      headers: {
+      headers: {        'Access-Control-Allow-Origin': '*',
+
         authtoken,
       },
     }
@@ -19,7 +20,8 @@ export const currentUser = async (authtoken) => {
       `${process.env.REACT_APP_API}/current-user`,
       {},
       {
-        headers: {
+        headers: {        'Access-Control-Allow-Origin': '*',
+
           authtoken,
         },
       }

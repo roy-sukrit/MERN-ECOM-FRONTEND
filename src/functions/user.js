@@ -67,7 +67,8 @@ export const createOrder = async (stripeResponse,authtoken) =>
 `${process.env.REACT_APP_API}/user/order`,
  { stripeResponse },
  {
-     headers : {
+     headers : {        'Access-Control-Allow-Origin': '*',
+
         authtoken,
     }
 }
@@ -79,7 +80,8 @@ export const getUserOrders = async (authtoken) =>
  await axios.get(
 `${process.env.REACT_APP_API}/user/orders`,
  {
-     headers : {
+     headers : {        'Access-Control-Allow-Origin': '*',
+
         authtoken,
     }
 }
